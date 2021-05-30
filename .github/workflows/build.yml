@@ -10,16 +10,16 @@ on:
       - master
 
 jobs:
-  name: build
-  runs-on: windows-latest
-  defaults:
-    run:
-      shell: C:\tools\cygwin\bin\bash.exe --login '{0}'
-  steps:
-    - name: Set up Cygwin
-      uses: egor-tensin/setup-cygwin@v3
-      with:
-        packages: cygport bison curl flex gcc-core gcc-g++ libbz2-devel liblzma-devel libbrotli-devel libsqlite3-devel libgc-devel libboost-devel libedit-devel make openssl-devel patch perl perl-DBD-SQLite pkg-config
+  build:
+    runs-on: windows-latest
+    defaults:
+      run:
+        shell: C:\tools\cygwin\bin\bash.exe --login '{0}'
+    steps:
+      - name: Set up Cygwin
+        uses: egor-tensin/setup-cygwin@v3
+        with:
+          packages: cygport bison curl flex gcc-core gcc-g++ libbz2-devel liblzma-devel libbrotli-devel libsqlite3-devel libgc-devel libboost-devel libedit-devel make openssl-devel patch perl perl-DBD-SQLite pkg-config
 
-    - run: |
-        cygport nix/nix.cygport download all
+      - run: |
+          cygport nix/nix.cygport download all
