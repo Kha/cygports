@@ -1,14 +1,14 @@
 NAME="nix"
-VERSION=1.8
-RELEASE=1
+VERSION=git
+RELEASE=0
 CATEGORY="Devel"
 SUMMARY="The purely functional package manager"
 DESCRIPTION="Nix is a powerful package manager for Linux and other Unix systems that makes package management reliable and reproducible. It provides atomic upgrades and rollbacks, side-by-side installation of multiple versions of a package, multi-user package management and easy setup of build environments."
 HOMEPAGE="http://nixos.org/nix/"
-SRC_URI="http://nixos.org/releases/nix/nix-1.8/nix-1.8.tar.xz"
+SRC_URI="https://github.com/NixOS/nix/archive/refs/heads/master.tar.gz"
 
 
-DEPEND="bison curl flex gcc-core gcc-g++ libbz2-devel libsqlite3-devel make openssl-devel patch perl perl-DBD-SQLite perl-WWW-Curl pkg-config"
+DEPEND="bison curl flex gcc-core gcc-g++ libbz2-devel liblzma-devel libbrotli-devel libsqlite3-devel libgc-devel libboost-devel libedit-devel make openssl-devel patch perl perl-DBD-SQLite pkg-config"
 REQUIRES="$DEPEND"
 
 
